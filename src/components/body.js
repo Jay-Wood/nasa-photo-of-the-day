@@ -10,14 +10,15 @@ export default function ImgContainer() {
     axios
     .get(`https://api.nasa.gov/planetary/apod?api_key=pe1nx4Aolg4EtkBvJ8ZwQRAqnI7M8eE7obEJubog&date=2012-03-14`)
     .then(response => {
-      const urlFromNasa = response
+      const urlFromNasa = response.data.url
       console.log("data from NASA (response.data.url):", response.data.url)
-      console.log(imgURL)
+      setImgURL(urlFromNasa)
     })
 
     return (
       <div className="img">
         <ImgCard imgURL={imgURL} />
+        {console.log("in body.js return", {imgURL})}
       </div>
     )  
 }
