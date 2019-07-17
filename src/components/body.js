@@ -1,17 +1,26 @@
 import React, { useEffect, useState } from "react";
 import axios from "axios";
+import ImgCard from "./imgCard.js";
 
-const Body =
-// useEffect(() => {
+
+export default function ImgContainer() {
+
+  const [imgURL, setImgURL] = useState([])
+
     axios
-      .get("https://api.nasa.gov/planetary/apod?api_key=NNKOjkoul8n1CH18TWA9gwngW1s1SmjESPjNoUFo")
-      .then(response => {
-        console.log("data from NASA:", response)
-      })
-    //   .catch(response => {
-    //       console.log("some error", response)
-    //   });
-//   }, []);
+    .get(`https://api.nasa.gov/planetary/apod?api_key=pe1nx4Aolg4EtkBvJ8ZwQRAqnI7M8eE7obEJubog&date=2012-03-14`)
+    .then(response => {
+      const urlFromNasa = response
+      console.log("data from NASA (response.data.url):", response.data.url)
+      console.log(imgURL)
+    })
+
+    return (
+      <div className="img">
+        <ImgCard imgURL={imgURL} />
+      </div>
+    )  
+}
 
 
-export default Body
+

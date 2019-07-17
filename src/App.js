@@ -7,8 +7,10 @@ import Body from "./components/body.js";
 function App() {
   return (
     <div className="App">
-      cob
-    <Body />
+      <div className="Title">
+        <h1>Welcome to NASA Photo of the Day</h1>
+      </div>
+      <Body />
     </div>
   );
 }
