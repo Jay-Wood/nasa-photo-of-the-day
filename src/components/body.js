@@ -8,21 +8,21 @@ export default function ImgContainer() {
 
   useEffect( () => {
     axios
-      .get(`https://api.nasa.gov/planetary/apod?api_key=pe1nx4Aolg4EtkBvJ8ZwQRAqnI7M8eE7obEJubog&date=2012-03-14`)
+      .get(`https://api.nasa.gov/planetary/apod?api_key=pe1nx4Aolg4EtkBvJ8ZwQRAqnI7M8eE7obEJubog`)
       .then(response => {
         const photoObj = response.data
         setPhotoObj(photoObj)
       });
     }, []);
-
-    
-    console.log("photoObj(response.data):", photoObj)
+    console.log("Data from API", photoObj)
     
     return (
       <div className="img">
         <ImgCard imgURL={photoObj.url}
                  imgTitle={photoObj.title} 
                  imgCopyright={photoObj.copyright}
+                 imgDate={photoObj.date}
+                 imgExplanation={photoObj.explanation}
         />
       </div>
     )  
