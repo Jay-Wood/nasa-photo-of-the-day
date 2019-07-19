@@ -22,6 +22,7 @@ const TitleH1 = styled.h1`
 
 const HeaderDiv = styled.div`
   background: black;
+  height: 10vw;
   color: white;
   display: flex;
   justify-content: center;

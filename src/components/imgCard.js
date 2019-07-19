@@ -9,6 +9,8 @@ const CardWrapper = styled.div`
 
 const ImgHeader = styled.div`
   color: blue;
+  height: 15vh;
+  padding: 2vw;
   display: flex;
   flex-direction: column;
   justify-content: space around;
@@ -29,12 +31,20 @@ const ImgContainer = styled.div`
   width: 80%;
   margin: 0 auto;
   border-radius: 5px;
+  border: 1px solid blue;
+`;
+
+const ImgImg = styled.img`
+  width: 100%;
+  margin: 0 auto;
+  border-radius: 5px
 `;
 
 const ImgExplanation = styled.p`
   color: darkgray;
   padding: .5vw;
-  width: 60%;
+  width: 80%;
+  margin: 0 auto;
   text-align left;
 `;
 
@@ -47,7 +57,7 @@ const ImgCard = function (props) {
         <h4>Copyright: {props.imgCopyright} </h4>
       </ImgHeader>  
       <ImgContainer>
-        <img src={props.imgURL} alt = "NASA photo" /> 
+        <ImgImg src={props.imgURL} alt = "NASA photo" /> 
       </ImgContainer>
       <ImgExplanation> {props.imgExplanation}</ImgExplanation>
     </CardWrapper>
